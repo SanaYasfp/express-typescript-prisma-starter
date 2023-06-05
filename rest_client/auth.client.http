@@ -1,0 +1,44 @@
+@port=3000
+@hostname=http://127.0.0.1
+@host={{hostname}}:{{port}}
+@apiVersion=v1
+@baseRoute={{host}}/{{apiVersion}}/auth
+@contentType=application/json
+
+POST {{baseRoute}}/signup
+Content-Type:{{contentType}}
+
+{
+  "email": "yasfp.pro@gmail.com",
+  "phone_number": "+2250707988128",
+  "password": "hello"
+}
+
+###
+
+POST {{baseRoute}}/login
+Content-Type:{{contentType}}
+
+{
+  "magicLink": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFjMlZ5WDJsa0lqb3lMQ0pwWVhRaU9qRTJPRFUwTURBeE1UTXNJbVY0Y0NJNk1UWTROVFUzTWpreE0zMC5YZEpyTHQya0V5VnB2UjBkMVY5UmpmZkRKZDFCT3o1R1pHOUZGUXpJQUxr"
+}
+
+###
+
+POST {{baseRoute}}/login
+Content-Type:{{contentType}}
+
+{
+  "email": "yasfp.pro@gmail.com",
+  "password": "hello"
+}
+
+###
+
+POST {{baseRoute}}/refresh-access
+Content-Type: {{contentType}}
+
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwb3NpdGlvbiI6MSwidXNlciI6eyJpZCI6MiwicGhvbmVfbnVtYmVyIjoiKzIyNTA3MDc5ODgxMjgiLCJlbWFpbCI6Inlhc2ZwLnByb0BnbWFpbC5jb20iLCJmdWxsX25hbWUiOm51bGwsInJvbGUiOiJsZW5kZXIiLCJjcmVhdGVkX2F0IjoiMjAyMy0wNS0yOVQyMjo0MTo1My40MDRaIn0sImlhdCI6MTY4NTg0MjQ2NCwiZXhwIjoxNjg1ODQyODI0fQ.Q9x7Ic6SHfNqziX18XMsiA7vr04rblDJy4DV9DoSU6E",
+  "refresh_token": "rJJakVwFGz3JEiyurci9QRXb16VvSPDkBOgaupT3RaE"
+}

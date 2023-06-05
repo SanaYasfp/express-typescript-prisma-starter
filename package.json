@@ -1,33 +1,42 @@
 {
-  "name": "express-api-starter-ts",
+  "name": "kori-invest",
   "version": "1.2.0",
-  "description": " A basic starter for an express.js API with Typescript",
+  "description": "KORI - Plateforme d'investissement immobilier pour les non-résidents en Côte d'Ivoire. Convertissez vos fonds en devises étrangères et investissez dans des projets immobiliers avec des taux de rendement allant de 3% à 6%. Découvrez également l'immobilier fractionné avec la copropriété de villas de vacance. Suivez vos investissements via un tableau de bord intuitif.",
   "main": "src/index.ts",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "dev": "nodemon src/index.ts",
+    "dev": "nodemon --watch . -e js,ts,json --exec \"set DEBUG=* & ts-node src/index.ts\"",
     "build": "tsc",
     "lint": "eslint --fix src test",
     "test": "jest"
   },
   "keywords": [],
-  "author": "CJ R. <cj@null.computer> (https://w3cj.now.sh)",
+  "author": "SanaYasfp <yasfp.pro@gmail.com> (https://app.jechill.com/@KKTG)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/w3cj/express-api-starter.git"
+    "url": "https://github.com/COOLLIONFINANCEDEV/kori-invest-api.git"
   },
   "license": "MIT",
   "dependencies": {
+    "@prisma/client": "^4.14.1",
+    "@sendgrid/mail": "^7.7.0",
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
+    "debug": "^4.3.4",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "helmet": "^6.1.5",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.0",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/cors": "^2.8.13",
+    "@types/debug": "^4.1.8",
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.1",
+    "@types/jsonwebtoken": "^9.0.2",
     "@types/morgan": "^1.9.4",
     "@types/node": "^18.16.3",
     "@types/supertest": "^2.0.12",
@@ -39,6 +48,7 @@
     "eslint-plugin-import": "^2.27.5",
     "jest": "^29.5.0",
     "nodemon": "^2.0.22",
+    "prisma": "^4.14.1",
     "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",

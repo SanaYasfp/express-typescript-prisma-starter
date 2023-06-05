@@ -1,0 +1,16 @@
+@port=3000
+@hostname=http://127.0.0.1
+@host={{hostname}}:{{port}}
+@apiVersion=v1
+@baseRoute={{host}}/{{apiVersion}}/investment
+@contentType=application/json
+
+POST {{baseRoute}}/invest
+Content-Type:{{contentType}}
+Authorization bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwb3NpdGlvbiI6MCwidXNlciI6eyJpZCI6MiwicGhvbmVfbnVtYmVyIjoiKzIyNTA3MDc5ODgxMjgiLCJlbWFpbCI6Inlhc2ZwLnByb0BnbWFpbC5jb20iLCJmdWxsX25hbWUiOm51bGwsInJvbGUiOiJsZW5kZXIiLCJjcmVhdGVkX2F0IjoiMjAyMy0wNS0yOVQyMjo0MTo1My40MDRaIn0sImlhdCI6MTY4NTk4NTA0MiwiZXhwIjoxNjg1OTg1NDAyfQ.goukuFrqALe5frLokQJ8D3TJI_cy-eZYDDTQyusnTYc
+
+{
+  "amount": 1000,
+  "term": 3,
+  "proof": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDADIiJSwlHzIsKSw4NTI7S31RS0VFS5ltc1p9tZ++u7Kfr6zI4f/zyNT/16yv+v/9////////wfD/////////////2wBDATU4OEtCS5NRUZP/zq/O////////////////////////////////////////////////////////////////////wAARCAAYAEADAREAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAQMAAgQF/8QAJRABAAIBBAEEAgMAAAAAAAAAAQIRAAMSITEEEyJBgTORUWFx/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOgM52xQDrjvAV5Xv0vfKUALlTQfeBm0HThMNHXkL0Lw/swN5qgA8yT4MCS1OEOJV8mBz9Z05yfW8iSx7p4j+jA1aD6Wj7ZMzstsfvAas4UyRHvjrAkC9KhpLMClQntlqFc2X1gUj4viwVObKrddH9YDoHvuujAEuNV+bLwFS8XxdSr+Cq3Vf+4F5RgQl6ZR2p1eAzU/HX80YBYyJLCuexwJCO2O1bwCRidAfWBSctswbI12GAJT3yiwFR7+MBjGK2g/WAJR3FdF84E2rK5VR0YH/9k="
+}

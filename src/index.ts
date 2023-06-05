@@ -1,8 +1,8 @@
 import app from './app';
+import { appConfig } from './config';
+import { Logger } from './utils';
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-  /* eslint-disable no-console */
-  console.log(`Listening: http://localhost:${port}`);
-  /* eslint-enable no-console */
+const server = app.listen(appConfig.PORT, () => {
+  const logger = new Logger({ });
+  logger.success(`Express server listening on port: ${appConfig.PORT}`);
 });

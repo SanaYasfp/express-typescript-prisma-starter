@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id                    Int           @id @default(autoincrement())
+  email                 String        @unique
+  phone_number          String
+  full_name             String?
+  role                  String
+  Role                  Roles         @relation(fields: [role], references: [name])
+  password              String
+  deleted               Boolean       @default(false)
+  email_verified        Boolean       @default(false)
+  phone_number_verified Boolean       @default(false)
+  account_activated     Boolean       @default(false)
+  created_at            DateTime      @default(now())
+  updated_at            DateTime?     @updatedAt
+  Investments           Investments[]
+
+  @@map("users")
+}
+
+model Roles {
+  id         Int       @id @default(autoincrement())
+  name       String    @unique
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+  Users      Users[]
+
+  @@map("roles")
+}
+
+model Investments {
+  id             Int       @id @default(autoincrement())
+  amount         Float
+  term           Int
+  gain           Float
+  status         String // Confirmed, Pending, Change Request, Early Stop Request 
+  accepted       Boolean   @default(false)
+  accepted_at    DateTime?
+  date_of_refund DateTime?
+  refunded       Boolean   @default(false)
+  refunded_at    DateTime?
+  proof          String // link to payment proof document
+  created_at     DateTime  @default(now())
+  updated_at     DateTime? @updatedAt
+  lender         Int
+  User           Users     @relation(fields: [lender], references: [id])
+
+  @@map("investments")
+}
