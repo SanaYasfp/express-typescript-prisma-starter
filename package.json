@@ -4,7 +4,7 @@
   "description": "KORI - Plateforme d'investissement immobilier pour les non-résidents en Côte d'Ivoire. Convertissez vos fonds en devises étrangères et investissez dans des projets immobiliers avec des taux de rendement allant de 3% à 6%. Découvrez également l'immobilier fractionné avec la copropriété de villas de vacance. Suivez vos investissements via un tableau de bord intuitif.",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "start": "dist/src/index.js",
     "dev": "nodemon --watch . -e js,ts,json --exec \"set DEBUG=* & ts-node src/index.ts\"",
     "build": "tsc",
     "lint": "eslint --fix src test",

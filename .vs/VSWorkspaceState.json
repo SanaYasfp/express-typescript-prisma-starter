@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\api",
+    "\\src\\public",
+    "\\src\\utils"
   ],
+  "SelectedNode": "\\src\\utils\\index.ts",
   "PreviewInSolutionExplorer": false
 }
